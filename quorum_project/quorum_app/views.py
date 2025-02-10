@@ -12,7 +12,7 @@ from .serializers import BillSerializer, BillSummarySerializer, LegislatorSummar
 
 
 class BillViewSet(ModelViewSet):
-    http_method_names: list[str] = ["get"]
+    http_method_names: list[str] = ["delete", "get", "post", "put"]
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     queryset: QuerySet[Bill.objects] = Bill.objects.all()
@@ -20,7 +20,7 @@ class BillViewSet(ModelViewSet):
 
 
 class PersonViewSet(ModelViewSet):
-    http_method_names: list[str] = ["get"]
+    http_method_names: list[str] = ["delete", "get", "post", "put"]
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     queryset: QuerySet[Person.objects] = Person.objects.all()
@@ -28,7 +28,7 @@ class PersonViewSet(ModelViewSet):
 
 
 class VoteViewSet(ModelViewSet):
-    http_method_names: list[str] = ["get"]
+    http_method_names: list[str] = ["delete", "get", "post", "put"]
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     queryset: QuerySet[Vote.objects] = Vote.objects.all()
@@ -36,7 +36,7 @@ class VoteViewSet(ModelViewSet):
 
 
 class VoteResultViewSet(ModelViewSet):
-    http_method_names: list[str] = ["get"]
+    http_method_names: list[str] = ["delete", "get", "post", "put"]
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     queryset: QuerySet[VoteResult.objects] = VoteResult.objects.all()
