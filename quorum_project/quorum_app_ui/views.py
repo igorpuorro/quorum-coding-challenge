@@ -5,7 +5,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 
 
-API_BASE_URL = "http://localhost:8000/api/v1"
+API_BASE_URL = "http://localhost:8000/api/v1/quorum-app-ui"
 REQUEST_TIMEOUT = 5
 
 
@@ -16,7 +16,7 @@ def index(request: HttpRequest) -> HttpResponse:
 
 
 def legislator_summary(request: HttpRequest) -> HttpResponse:
-    url = f"{API_BASE_URL}/legislator-summary/"
+    url = f"{API_BASE_URL}/legislators/summary/"
     response = requests.get(
         url=url,
         timeout=REQUEST_TIMEOUT
@@ -30,7 +30,7 @@ def legislator_summary(request: HttpRequest) -> HttpResponse:
 
 
 def bill_summary(request: HttpRequest) -> HttpResponse:
-    url = f"{API_BASE_URL}/bill-summary/"
+    url = f"{API_BASE_URL}/bills/summary/"
     response = requests.get(
         url=url,
         timeout=REQUEST_TIMEOUT
