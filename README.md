@@ -4,38 +4,38 @@
 
 ### Clone the Repository
 ```sh
-$ git clone https://github.com/igorpuorro/quorum-coding-challenge.git
+git clone https://github.com/igorpuorro/quorum-coding-challenge.git
 ```
 
 ### Change to Project Root Directory
 ```sh
-$ cd quorum-coding-challenge/
+cd quorum-coding-challenge/
 ```
 
 ### Create a Virtual Environment
 ```sh
-$ python3 -m venv .venv
+python3 -m venv .venv
 ```
 
 ### Activate the Virtual Environment
 ```sh
-$ source .venv/bin/activate
+source .venv/bin/activate
 ```
 
 ### Install Dependencies
 ```sh
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Change to Project Directory
 ```sh
-$ cd quorum_project/
+cd quorum_project/
 ```
 
 ### Run Automated Setup
 The token generated at the end of the setup aims to be used in Swagger UI to authorize access to restricted endpoints.
 ```sh
-$ python manage.py setup_quorum_app
+python manage.py setup_quorum_app
 ```
 
 #### Command Output:
@@ -79,17 +79,17 @@ Setup completed successfully!
 ### Check for CSV Data Load Errors
 Check for CSV data that failed to be loaded into the SQLite3 database.
 ```sh
-$ cat load_data.log
+cat load_data.log
 ```
 
 ### Run Automated Tests
 ```sh
-$ python manage.py test quorum_app
+python manage.py test quorum_app
 ```
 
 ### Start the Application
 ```sh
-$ python manage.py runserver
+python manage.py runserver
 ```
 
 ### Application URLs
