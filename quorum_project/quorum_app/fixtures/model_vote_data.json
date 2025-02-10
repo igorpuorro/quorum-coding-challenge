@@ -1,0 +1,9 @@
+[
+    {
+        "model": "quorum_app.Vote",
+        "pk": 3321166,
+        "fields": {
+            "bill": 2952375
+        }
+    }
+]

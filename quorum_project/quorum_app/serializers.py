@@ -2,7 +2,7 @@
 
 from typing import Type
 
-from rest_framework.serializers import ModelSerializer, PrimaryKeyRelatedField
+from rest_framework.serializers import CharField, IntegerField, ModelSerializer, PrimaryKeyRelatedField
 
 from .models import Person, Bill, Vote, VoteResult
 
@@ -48,3 +48,22 @@ class VoteResultSerializer(ModelSerializer):
     class Meta:
         model: Type[VoteResult] = VoteResult
         fields: str = "__all__"
+
+
+class BillSummarySerializer(ModelSerializer):
+    supporters: IntegerField = IntegerField()
+    opposers: IntegerField = IntegerField()
+    primary_sponsor: CharField = CharField(source="sponsor.name")
+
+    class Meta:
+        model = Bill
+        fields = ["id", "title", "supporters", "opposers", "primary_sponsor"]
+
+
+class LegislatorSummarySerializer(ModelSerializer):
+    supported_bills: IntegerField = IntegerField()
+    opposed_bills: IntegerField = IntegerField()
+
+    class Meta:
+        model = Person
+        fields = ["id", "name", "supported_bills", "opposed_bills"]

@@ -1,0 +1,10 @@
+[
+    {
+        "model": "quorum_app.Bill",
+        "pk": 2952375,
+        "fields": {
+            "title": "H.R. 5376: Build Back Better Act",
+            "sponsor": 412211
+        }
+    }
+]

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from django.test import TestCase
+from django.urls import reverse
+from rest_framework.test import APIClient
 
 from .models import Person, Bill, Vote, VoteResult
 
@@ -71,4 +73,41 @@ class ModelTests(TestCase):
         self.assertEqual(
             str(vote_result),
             "Rep. Andrew Garbarino (R-NY-2) voted Yea"
+        )
+
+
+class BillSummaryViewTests(TestCase):
+    fixtures = [
+        "model_bill_data.json",
+        "model_person_data.json",
+        "model_vote_data.json",
+        "model_voteresult_data.json"
+    ]
+
+    def setUp(self):
+        self.client = APIClient()
+        self.url = reverse(viewname="bill-summary")
+
+    def test_bill_summary_view(self):
+        """
+        Test the BillSummaryView to ensure it returns the correct bill data,
+        including the number of supporters and opposers for each bill.
+        """
+
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 200)
+
+        bill_data = response.data[0]
+
+        self.assertEqual(
+            bill_data["id"], 2952375
+        )
+        self.assertEqual(
+            bill_data["title"], "H.R. 5376: Build Back Better Act"
+        )
+        self.assertEqual(
+            bill_data["supporters"], 1
+        )
+        self.assertEqual(
+            bill_data["opposers"], 0
         )

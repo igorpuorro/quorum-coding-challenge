@@ -1,0 +1,11 @@
+[
+    {
+        "model": "quorum_app.VoteResult",
+        "pk": 92516368,
+        "fields": {
+            "legislator": 412211,
+            "vote": 3321166,
+            "vote_type": 1
+        }
+    }
+]
