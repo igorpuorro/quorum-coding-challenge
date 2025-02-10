@@ -1,0 +1,33 @@
+[
+    {
+        "model": "quorum_app.person",
+        "pk": 15318,
+        "fields": {
+            "name": "Rep. Andrew Garbarino (R-NY-2)"
+        }
+    },
+    {
+        "model": "quorum_app.bill",
+        "pk": 2952375,
+        "fields": {
+            "title": "H.R. 5376: Build Back Better Act",
+            "sponsor": 15318
+        }
+    },
+    {
+        "model": "quorum_app.vote",
+        "pk": 3321166,
+        "fields": {
+            "bill": 2952375
+        }
+    },
+    {
+        "model": "quorum_app.voteresult",
+        "pk": 92516368,
+        "fields": {
+            "legislator": 15318,
+            "vote": 3321166,
+            "vote_type": 1
+        }
+    }
+]

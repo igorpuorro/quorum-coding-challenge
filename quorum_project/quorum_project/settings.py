@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'quorum_app',
+    'quorum_app_ui',
 ]
 
 MIDDLEWARE = [

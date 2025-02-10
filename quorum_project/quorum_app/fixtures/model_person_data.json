@@ -1,0 +1,16 @@
+[
+    {
+        "model": "quorum_app.person",
+        "pk": 15318,
+        "fields": {
+            "name": "Rep. Andrew Garbarino (R-NY-2)"
+        }
+    },
+    {
+        "model": "quorum_app.person",
+        "pk": 412211,
+        "fields": {
+            "name": "Rep. John Yarmuth (D-KY-3)"
+        }
+    }
+]
